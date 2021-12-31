@@ -26,14 +26,15 @@ python train.py [--params]
 - *batch_size=128, dropout=0.8, epoch=10, hidden_size=1200, lr=0.01*
 - optimizer는 SGD에 momentum 0.9를 주어 유지합니다.
 - 이때 논문에서 제시한 정확도는 약 98.3이며, 실험에서도 98.29로 비슷한 수치가 나왔습니다.
-
+<img width="409" alt="distillation_teacher" src="https://user-images.githubusercontent.com/74973799/147826496-e1980f17-51fe-4f35-a47d-85f657f6c108.png">
 
 - Student model의 파라미터는 다음과 같습니다.
 - *batch_size=128, dropout=0.8, epoch=10, hidden_size=800, lr=0.1*
 - KD을 사용하지 않았을 때 논문에서 제시한 정확도는 97.95이며 저는 약간 더 낮은 97.78이 나왔습니다. 조금 더 학습을 돌리면 올라갈 것 같긴 하지만 10에포크에서 멈추었습니다.
-
+<img width="399" alt="distillation_student" src="https://user-images.githubusercontent.com/74973799/147826488-c779d801-c046-4e6a-9b7f-602910531168.png">
 
 - 반면 KD를 사용했을 때의 훈련 파라미터는 다음과 같으며
 - *alpha=0.1, temperature=20*
 - 논문에서 약 98.5를 제시하였고 저는 98.23의 정확도가 나왔습니다. 세팅이 다른 모양인데 우선 small model으로
 big model과 거의 비슷한 수준의 정확도를 이끌어내는 점은 확인했습니다.
+<img width="398" alt="distillation_result" src="https://user-images.githubusercontent.com/74973799/147826476-4d05fcd8-be8a-4c33-980b-641b5023d958.png">
